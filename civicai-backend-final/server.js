@@ -60,8 +60,5 @@ process.on("unhandledRejection", (err) => {
   shutdown("unhandledRejection");
 });
 
-app.get("/", (req, res) => {
-  res.send("CivicAI Backend is Live 🚀");
-});
 
 start();

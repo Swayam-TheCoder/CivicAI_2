@@ -76,6 +76,11 @@ app.use("/api/ai",     aiRoutes);
 app.use("/api/users",  userRoutes);
 
 // ── API index ──────────────────────────────────────────────────────────────
+
+app.get("/", (req, res) => {
+  res.send("CivicAI Backend is Live 🚀");
+});
+
 app.get("/api", (req, res) => {
   res.json({
     name: "CivicAI API", version: "1.0.0",
@@ -94,6 +99,7 @@ app.get("/api", (req, res) => {
 });
 
 // ── 404 + Error handler ────────────────────────────────────────────────────
+
 app.use(notFound);
 app.use(errorHandler);
 
