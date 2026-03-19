@@ -21,15 +21,21 @@ const app = express();
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
 
 // ── CORS ───────────────────────────────────────────────────────────────────
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3001",
+  "https://civic-ai-2-869rniwnq-hello-e803509d.vercel.app"
+];
+
 app.use(cors({
-  origin: [
-    process.env.CLIENT_URL || "http://localhost:3000",
-    "http://localhost:5173",
-    "http://localhost:3001",
-  ],
-  credentials:     true,
-  methods:         ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders:  ["Content-Type", "Authorization"],
+  origin: function(origin, callback){
+    if(!origin || allowedOrigins.includes(origin)){
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 // ── Body parsers ───────────────────────────────────────────────────────────
