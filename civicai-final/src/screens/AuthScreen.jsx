@@ -80,7 +80,7 @@ export default function AuthScreen() {
               </label>
               <input
                 value={form.name} onChange={set("name")}
-                placeholder="Swayam Patil" required
+                placeholder="Swayam Sagarkar" required
                 style={inputStyle}
                 onFocus={e => e.target.style.borderColor = C.navy}
                 onBlur={e => e.target.style.borderColor = C.border}
@@ -94,7 +94,7 @@ export default function AuthScreen() {
             </label>
             <input
               type="email" value={form.email} onChange={set("email")}
-              placeholder="you@example.com" required
+              placeholder="yourEmail@example.com" required
               style={inputStyle}
               onFocus={e => e.target.style.borderColor = C.navy}
               onBlur={e => e.target.style.borderColor = C.border}
