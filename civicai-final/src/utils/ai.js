@@ -1,6 +1,6 @@
 // ─── AI ───────────────────────────────────────────────────────────────────────
 export async function runAI(base64Image) {
-  const res = await fetch("http://localhost:5000/api/ai/analyze", {
+  const res = await fetch("https://civicai-2-6h8l.onrender.com/api/ai/analyze", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
