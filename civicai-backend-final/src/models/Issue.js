@@ -100,7 +100,7 @@ const issueSchema = new mongoose.Schema(
 );
 
 // ── Indexes ────────────────────────────────────────────────────────────────
-issueSchema.index({ issueId: 1 });
+
 issueSchema.index({ reporter: 1 });
 issueSchema.index({ type: 1 });
 issueSchema.index({ status: 1 });
